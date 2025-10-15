@@ -685,16 +685,14 @@ function GSE.GetOptionsTable()
             },
             macroResetTab = {
                 name = L["Macro Reset"],
-                desc = L[
-                    "These options combine to allow you to reset a macro while it is running. You must choose mouse a m"
-                ],
+                desc = "You must choose at least one mouse button + one modifier",
                 order = 3,
                 type = "group",
                 args = {
 					-- Add this to the macroResetTab args in Options.lua
 				mousebuttontitle = {
 					type = "header",
-					name = L["Mouse + modifier will reset the macro"],
+					name = "Mouse + modifier will reset the macro",
 					order = 550
 				},
 				resetLeftMouseButton = {

@@ -619,11 +619,13 @@ if mouseButton and mouseButton ~= "0" then
 end
 
 if resetRequested then
-    step = 1
-    self:SetAttribute('macrotext', macros[step] )
-    -- Don't increment step after reset - stay on step 1
-    self:SetAttribute('step', step)
+    -- Reset to step 1 without executing any macro
+    self:SetAttribute('step', 1)
+    self:SetAttribute("updateicon", true)
+    -- Clear the macrotext to prevent execution
+    self:SetAttribute("macrotext", "")
 else
+    -- Normal operation - execute current step and advance
     self:SetAttribute('macrotext', macros[step] )
     step = step % #macros + 1
     if not step or not macros[step] then
@@ -631,9 +633,8 @@ else
         step = 1
     end
     self:SetAttribute('step', step)
+    self:SetAttribute("updateicon", true)
 end
-
-self:SetAttribute("updateicon", true)
 ]=]
 
 Statics.TranslatorMode = {}

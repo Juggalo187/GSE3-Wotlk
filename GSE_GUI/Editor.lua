@@ -335,7 +335,7 @@ function GSE.GUIEditorPerformLayout(frame)
             editframe.SequenceName = GSE.UnEscapeString(nameeditbox:GetText())
             GSE.GUIUpdateSequenceDefinition(editframe.ClassID, editframe.SequenceName, editframe.Sequence)
             editframe.save = true
-            myAceTimer1:ScheduleTimer(MyTimer1Func, 5)
+            myAceTimer1:ScheduleTimer(MyTimer1Func, 1)
         else
             GSE.Print(L["Error processing Custom Pause Value.  You will need to recheck your macros."], "ERROR")
 			end
@@ -3495,6 +3495,6 @@ function GSE.GUIDeleteVersion(version)
 				-- GSE.GUIEditFrame:SetStatusText(editframe.statusText)
 			-- end
 		-- )
-		myAceTimer2:ScheduleTimer(MyTimer2Func, 5)
+		myAceTimer2:ScheduleTimer(MyTimer2Func, 1)
 	end
 end
